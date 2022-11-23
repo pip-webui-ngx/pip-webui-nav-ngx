@@ -1,0 +1,11 @@
+<div class="pip-secondary-actions-container" *ngIf="config?.actions && config.actions.length > 0">
+  <button mat-icon-button [matMenuTriggerFor]="menu" #actionsMenuTrigger="matMenuTrigger" (click)="onOpenActionsMenu()">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button [ngClass]="[ action.name ? 'pip-secondary-action-' + action.name : '']" mat-menu-item *ngFor="let action of config?.actions"
+            (click)="onActionClick(action)">
+      {{ action.title | translate }}
+    </button>
+  </mat-menu>
+</div>

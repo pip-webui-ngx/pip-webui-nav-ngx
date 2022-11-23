@@ -1,0 +1,30 @@
+<div class="pip-nav-menu w-stretch">
+    <div fxFlex="grow" fxLayout="column" class="w-stretch">
+        <div *ngFor="let section of config?.sections; let sectionIndex = index" class="w-stretch" fxLayout="column">
+            <mat-divider *ngIf="sectionIndex > 0"></mat-divider>
+            <ng-container *ngIf="!section.isCollapsable">
+                <div fxFlex="grow" *ngIf="section.title" class="pip-nav-menu-section-title">
+                    {{ section.title | translate }}
+                </div>
+                <div fxFlex="grow" class="w-stretch">
+                    <pip-nav-menu-section [section]="section" [sectionIndex]="sectionIndex" (select)="onItemSelect($event.index, $event.item)"
+                                          selectedSectionIndex="selectedSectionIndex" [selectedItemIndex]="selectedItemIndex"></pip-nav-menu-section>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="section.isCollapsable">
+                <mat-list-item>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header collapsedHeight="40px" expandedHeight="40px">
+                            <mat-icon *ngIf="!section.fontSet">{{ section?.icon || 'menu' }}</mat-icon>
+                            <mat-icon *ngIf="section.icon && section.fontSet" [fontSet]="section?.fontSet" [fontIcon]="section?.icon"></mat-icon>
+                            <h3 mat-line class="pip-link-title">{{ section.title | translate }}</h3>
+                        </mat-expansion-panel-header>
+                        <pip-nav-menu-section [section]="section" [sectionIndex]="sectionIndex" (select)="onItemSelect($event.index, $event.item)"
+                                              selectedSectionIndex="selectedSectionIndex" [selectedItemIndex]="selectedItemIndex"></pip-nav-menu-section>
+                    </mat-expansion-panel>
+                </mat-list-item>
+            </ng-container>
+        </div>
+
+    </div>
+</div>

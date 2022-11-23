@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "importHelpers": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "target": "es2020",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "pip-webui2-nav": [
+        "dist/pip-webui2-nav"
+      ],
+      "pip-webui2-nav/*": [
+        "dist/pip-webui2-nav/*"
+      ],
+      "packagetotestng6lib": [
+        "dist/packagetotestng6lib"
+      ],
+      "packagetotestng6lib/*": [
+        "dist/packagetotestng6lib/*"
+      ]
+    }
+  }
+}

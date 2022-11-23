@@ -1,0 +1,16 @@
+.pip-link-title {
+    margin-left: 16px;
+    font-weight: 500;
+    text-transform: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+mat-icon {
+    opacity: 0.56;
+    transition: all .35s ease;
+    margin-right: 4px;
+    font-size: 24px;
+}

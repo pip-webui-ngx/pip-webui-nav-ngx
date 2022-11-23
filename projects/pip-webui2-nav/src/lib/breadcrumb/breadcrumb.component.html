@@ -1,0 +1,36 @@
+<div class="gt-xs-container">
+  <!-- Search criteria -->
+  <span class="search-container" *ngIf="config?.searchCriteria" (click)="onSearchClick()">{{ config?.searchCriteria }}
+    -</span>
+  <!-- Breadcrumb navigation -->
+  <span class="navigation-item" *ngFor="let item of config?.items; let i = index" (click)="onItemClick(item)" [ngStyle]="{ 'max-width' : item.width + '%' }">
+    <span [ngClass]="{ 'with-icon':  i < config?.items.length - 1 }">{{ item.title | translate }}</span>
+    <mat-icon *ngIf="i < config?.items.length - 1">chevron_right</mat-icon>
+  </span>
+</div>
+
+<div fxLayout="row" class="xs-container">
+  <!-- Breadcrumb navigation -->
+  <button mat-button [matMenuTriggerFor]="menu" *ngIf="config?.items?.length > 1">
+    <div class="search-title-container">
+      <span class="search-container" *ngIf="config?.searchCriteria" (click)="onSearchClick()">{{ config?.searchCriteria
+        }} -</span>
+      <span>{{ config?.items[config?.items.length - 1].title | translate }}</span>
+    </div>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <button mat-button *ngIf="config?.items?.length < 2">
+    <div class="search-title-container without-icon">
+      <span class="search-container" *ngIf="config?.searchCriteria" (click)="onSearchClick()">{{ config?.searchCriteria
+        }} -</span>
+      <span>{{ config?.items[config?.items.length - 1].title | translate }}</span>
+    </div>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let item of config?.items; let i = index" (click)="onItemClick(item)" [ngClass]="{'grey-text': i == config?.items.length - 1}">
+      {{ item.title | translate }}
+    </button>
+  </mat-menu>
+</div>

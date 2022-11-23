@@ -1,0 +1,42 @@
+<pip-shadow visible="true" attachmentSide="left"></pip-shadow>
+<pip-shadow visible="true" attachmentSide="right"></pip-shadow>
+<div fxFlex="grow">
+  <mat-toolbar color="primary" class="pip-toolbar-shadow">
+  </mat-toolbar>
+  <pip-document-layout toolbar="true">
+    <pip-document-content>
+      <mat-toolbar>
+        Nav items
+      </mat-toolbar>
+
+      <h3 style="font-family: Roboto">Nav Icon configurations</h3>
+      <button mat-raised-button (click)="onChangeIcon()">Change icon</button>
+      <mat-divider></mat-divider>
+      <h3 style="font-family: Roboto">Breadcrumb configurations</h3>
+      <form>
+        <mat-form-field>
+          <input matInput name="searchCriteria" [(ngModel)]="breadcrumbSearchCriteria">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput name="title1" [(ngModel)]="breadcrumbTitle1">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput name="title2" [(ngModel)]="breadcrumbTitle2">
+        </mat-form-field>
+      </form>
+      <button mat-raised-button (click)="onChangeBreadcrumb()">Change breadcrumb</button>
+      <mat-divider></mat-divider>
+      <h3 style="font-family: Roboto">Nav header configurations</h3>
+      <form>
+        <mat-form-field>
+          <input matInput name="title1" [(ngModel)]="header.title">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput name="title2" [(ngModel)]="header.subtitle">
+        </mat-form-field>
+      </form>
+      <button mat-raised-button (click)="changeHeaderSubtitle() ">Change title or subtitle</button>
+      <button mat-raised-button (click)="openSecondaryAction() ">Open secondary actions menu</button>
+    </pip-document-content>
+  </pip-document-layout>
+</div>
