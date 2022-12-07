@@ -1,0 +1,10 @@
+<ng-container *ngIf="ctx$ | async as ctx">
+  <button mat-icon-button (click)="onClick(ctx.props)" *ngIf="ctx.props">
+    <mat-icon
+      *ngIf="ctx.props?.fontIcon && !ctx.props?.fontSet && !ctx.props?.svgIcon"> {{ ctx.props.fontIcon || 'menu'  }}</mat-icon>
+    <mat-icon *ngIf="ctx.props?.fontIcon && ctx.props?.fontSet && !ctx.props?.svgIcon" [fontSet]="ctx.props?.fontSet"
+              [fontIcon]="ctx.props?.fontIcon"></mat-icon>
+    <mat-icon *ngIf="!ctx.props?.fontIcon && !ctx.props?.fontSet && ctx.props?.svgIcon" [svgIcon]="ctx.props?.svgIcon">
+    </mat-icon>
+  </button>
+</ng-container>

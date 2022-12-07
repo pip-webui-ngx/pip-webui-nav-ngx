@@ -18,11 +18,11 @@
       "dom"
     ],
     "paths": {
-      "pip-webui2-nav": [
-        "dist/pip-webui2-nav"
+      "pip-webui-nav-ngx": [
+        "dist/pip-webui-nav-ngx"
       ],
-      "pip-webui2-nav/*": [
-        "dist/pip-webui2-nav/*"
+      "pip-webui-nav-ngx/*": [
+        "dist/pip-webui-nav-ngx/*"
       ],
       "packagetotestng6lib": [
         "dist/packagetotestng6lib"

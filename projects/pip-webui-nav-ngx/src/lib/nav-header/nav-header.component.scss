@@ -1,0 +1,46 @@
+.pip-nav-subtitle {
+  font-size: 14px;
+  opacity: 0.56;
+}
+
+:host ::ng-deep mat-toolbar-row {
+  height: initial !important;
+  white-space: normal !important;
+}
+
+:host .mat-toolbar {
+  padding: 0;
+  height: auto;
+  position: relative;
+  .pip-nav-content-wrapper {
+    margin: 16px auto 16px 12px;
+    display: flex;
+  }
+  .shadow-block {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+    z-index: 4;
+  }
+}
+
+.pip-nav-content {
+  z-index: 5;
+  overflow: hidden;
+  div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.pip-pic {
+  z-index: 5;
+  height: 40px;
+  width: 40px;
+  margin-right: 16px;
+  border-radius: 50%;
+}

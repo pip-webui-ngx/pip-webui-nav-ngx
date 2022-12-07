@@ -72,8 +72,8 @@ class NavMenuConfig {
 
 **Example on the image**
 
-<a href="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/nav-menu.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/nav-menu.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/nav-menu.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/nav-menu.png"/>
 </a>
 
 ### Side navigation header 
@@ -98,8 +98,8 @@ class NavHeaderConfig {
 
 **Example on the image**
 
-<a href="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/nav-header.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/nav-header.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/nav-header.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/nav-header.png"/>
 </a>
 
 ## Application bar parts
@@ -129,8 +129,8 @@ const DefaultIcon: NavIconConfig = {
 
 **Example on the image**
 
-<a href="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/nav-icon.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/nav-icon.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/nav-icon.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/nav-icon.png"/>
 </a>
 
 ### Application bar breadcrumb
@@ -161,8 +161,8 @@ class BreadcrumbConfig {
 
 **Example on the image**
 
-<a href="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/breadcrumb.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/breadcrumb.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/breadcrumb.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/breadcrumb.png"/>
 </a>
 
 ### Application bar primary actions
@@ -195,8 +195,8 @@ class PrimaryActionsConfig {
 
 **Example on the image**
 
-<a href="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/primary-actions.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/primary-actions.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/primary-actions.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/primary-actions.png"/>
 </a>
 
 ### Application bar secondary actions
@@ -224,8 +224,8 @@ class SecondaryActionsConfig {
 
 **Example on the image**
 
-<a href="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/secondary-actions.png" style="display: block">
-    <img src="https://github.com/pip-webui2/pip-webui2-nav/raw/master/doc/images/secondary-actions.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/secondary-actions.png" style="display: block">
+    <img src="https://github.com/pip-webui2/pip-webui-nav-ngx/raw/master/doc/images/secondary-actions.png"/>
 </a>
 
 ## Services
@@ -237,7 +237,7 @@ class SecondaryActionsConfig {
 **Using**
 
 ```typescript
-import { PipNavService } from 'pip-webui2-nav';
+import { PipNavService } from 'pip-webui-nav-ngx';
 
 constructor(
     private navService: PipNavService,
@@ -281,7 +281,7 @@ constructor(
 To install this module using npm:
 
 ```bash
-npm install pip-webui2-nav --save
+npm install pip-webui-nav-ngx --save
 ```
 
 ## <a name="license"></a>License

@@ -1,16 +1,16 @@
 .example-content {
-    padding: 16px;
+  padding: 16px;
 }
 
 h3 {
-    margin-top: 0px;
+  margin-top: 0;
 }
 
 .mat-divider {
-    margin: 16px -16px;
+  margin: 16px -16px;
 }
 
 :host ::ng-deep.pip-document-content .mat-toolbar {
-    margin: -16px -16px 16px -16px;
-    width: calc(100% + 32px);
+  margin: -16px -16px 16px -16px;
+  width: calc(100% + 32px);
 }

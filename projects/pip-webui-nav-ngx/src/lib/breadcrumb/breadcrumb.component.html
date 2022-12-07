@@ -1,0 +1,50 @@
+<ng-container *ngIf="ctx$ | async as ctx">
+  <div class="gt-xs-container" *ngIf="!ctx.isMobile">
+    <!-- Search criteria -->
+    <span class="search-container" *ngIf="ctx.config?.searchCriteria" (click)="onSearchClick(ctx.config)">
+      {{ ctx.config?.searchCriteria }} -
+    </span>
+    <!-- Breadcrumb navigation -->
+    <div
+      class="navigation-item"
+      *ngFor="let item of ctx.config?.items; let i = index"
+      (click)="onItemClick(item, ctx.config)"
+      [ngStyle]="{ 'max-width': item.width + '%' }"
+    >
+      <span [ngClass]="{ 'with-icon': i < ctx.config?.items?.length - 1 }">{{ item.title }}</span>
+      <mat-icon *ngIf="i < ctx.config?.items.length - 1">chevron_right</mat-icon>
+    </div>
+  </div>
+
+  <div fxLayout="row" class="xs-container" *ngIf="ctx.isMobile">
+    <!-- Breadcrumb navigation -->
+    <button mat-button [matMenuTriggerFor]="menu" *ngIf="ctx.config?.items?.length > 1">
+      <div class="search-title-container">
+      <span class="search-container" *ngIf="ctx.config?.searchCriteria" (click)="onSearchClick(ctx.config)">
+        {{ ctx.config?.searchCriteria }} -
+      </span>
+        <span>{{ ctx.config?.items[ctx.config?.items.length - 1].title }}</span>
+      </div>
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <button mat-button *ngIf="ctx.config?.items?.length < 2">
+      <div class="search-title-container without-icon">
+      <span class="search-container" *ngIf="ctx.config?.searchCriteria" (click)="onSearchClick(ctx.config)">
+        {{ ctx.config?.searchCriteria }} -
+      </span>
+        <span>{{ ctx.config?.items[ctx.config?.items.length - 1].title }}</span>
+      </div>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        *ngFor="let item of ctx.config?.items; let i = index"
+        (click)="onItemClick(item, ctx.config)"
+        [ngClass]="{ 'grey-text': i == ctx.config?.items.length - 1 }">
+        {{ item.title }}
+      </button>
+    </mat-menu>
+  </div>
+</ng-container>

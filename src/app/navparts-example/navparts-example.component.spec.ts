@@ -1,11 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateModule } from '@ngx-translate/core';
-import { PipMediaService, PipSidenavService, PipRightnavService } from 'pip-webui2-layouts';
-import { PipThemesService } from 'pip-webui2-themes';
-
-import { NavpartsExampleModule } from './navparts-example.module';
+import { TranslocoTestingModule } from '@ngneat/transloco';
+import { PipMediaService, PipSidenavService } from 'pip-webui-layouts-ngx';
+import { PipThemesService } from 'pip-webui-themes-ngx';
 import { NavpartsExampleComponent } from './navparts-example.component';
+import { NavpartsExampleModule } from './navparts-example.module';
 
 describe('NavpartsExampleComponent', () => {
   let component: NavpartsExampleComponent;
@@ -13,19 +12,9 @@ describe('NavpartsExampleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        NavpartsExampleModule,
-        TranslateModule.forRoot()
-      ],
-      providers: [
-        PipMediaService,
-        PipSidenavService,
-        PipRightnavService,
-        PipThemesService
-      ]
-    })
-      .compileComponents();
+      imports: [NoopAnimationsModule, NavpartsExampleModule, TranslocoTestingModule],
+      providers: [PipMediaService, PipSidenavService, PipThemesService],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

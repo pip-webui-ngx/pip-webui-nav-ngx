@@ -1,55 +1,94 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TranslateModule } from '@ngx-translate/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   PipAppbarModule,
-  PipRightnavModule,
   PipMediaModule,
-  PipSidenavModule,
-  PipMainLayoutModule,
   PipRootLayoutModule,
-  PipSidenavExpanderModule
-} from 'pip-webui2-layouts';
+  PipSidenavModule,
+  PipSidenavPosition,
+} from 'pip-webui-layouts-ngx';
 import {
   PipBreadcrumbModule,
+  PipNavHeaderModule,
   PipNavIconModule,
+  PipNavMenuModule,
+  PipNavModule,
   PipPrimaryActionsModule,
   PipSecondaryActionsModule,
-  PipNavModule,
-  PipNavHeaderModule,
-  PipNavMenuModule
-} from 'pip-webui2-nav';
-
-import { PipThemesModule } from 'pip-webui2-themes';
-
-import { AppComponent } from './app.component';
+} from 'pip-webui-nav-ngx';
+import { mstThemes, PipThemesModule, pipWebUI2ThemesList } from 'pip-webui-themes-ngx';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { NavpartsExampleModule } from './navparts-example/navparts-example.module';
+import { TranslocoRootModule } from './transloco-root.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatToolbarModule, MatListModule, MatButtonModule,
-    TranslateModule.forRoot(),
+    MatToolbarModule,
+    MatListModule,
+    MatButtonModule,
 
-    PipThemesModule.forRoot(),
+    PipThemesModule.forRoot({
+      themes: [...pipWebUI2ThemesList, mstThemes['Elegant']],
+    }),
     PipAppbarModule.forRoot(),
-    PipRightnavModule.forRoot(),
     PipMediaModule.forRoot(),
-    PipSidenavModule.forRoot(),
-    PipMainLayoutModule,
+    PipSidenavModule,
     PipRootLayoutModule,
-    PipSidenavExpanderModule,
+    PipSidenavModule.withConfig({
+      start: {
+        views: [
+          {
+            name: 'default',
+            position: PipSidenavPosition.Main,
+            width: 250,
+          },
+          {
+            name: 'tablet',
+            alias: 'lt-md',
+            position: PipSidenavPosition.Root,
+            mode: 'side',
+            collapsed: true,
+            opened: true,
+            active: false,
+            width: 250,
+          },
+          {
+            name: 'mobile',
+            alias: 'lt-sm',
+            position: PipSidenavPosition.Root,
+            mode: 'over',
+            width: 250,
+          },
+        ],
+      },
+      end: {
+        views: [
+          {
+            name: 'default',
+            position: PipSidenavPosition.Root,
+            mode: 'side',
+            width: 350,
+          },
+          {
+            name: 'mobile',
+            alias: 'lt-sm',
+            position: PipSidenavPosition.Root,
+            mode: 'over',
+          },
+        ],
+      },
+    }),
     PipBreadcrumbModule,
     PipNavIconModule,
     PipPrimaryActionsModule,
@@ -59,9 +98,11 @@ import { NavpartsExampleModule } from './navparts-example/navparts-example.modul
     PipNavMenuModule,
 
     AppRoutingModule,
-    NavpartsExampleModule
+    NavpartsExampleModule,
+    HttpClientModule,
+    TranslocoRootModule,
   ],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

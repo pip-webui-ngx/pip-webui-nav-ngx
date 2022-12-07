@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="pip-nav-header" *ngIf="ctx$ | async as ctx">
+  <div class="pip-nav-content-wrapper">
+    <div class="shadow-block"></div>
+    <img *ngIf="ctx.props?.picture" [src]="ctx.props?.picture" class="pip-pic"/>
+    <div fxLayout="column" class="pip-nav-content">
+      <div>{{ ctx.props?.title }}</div>
+
+      <div class="pip-nav-subtitle" *ngIf="ctx.props && ctx.props?.subtitle">{{ ctx.props?.subtitle }}</div>
+    </div>
+  </div>
+</mat-toolbar>
