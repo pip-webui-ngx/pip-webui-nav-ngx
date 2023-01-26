@@ -64,6 +64,14 @@ export class PipBreadcrumbComponent {
     }
   }
 
+  getLastTitle(items?: BreadcrumbItem[]): string {
+    let res = '';
+    if (Array.isArray(items) && items.length && items[items.length - 1].title) {
+      res = items[items.length - 1].title;
+    }
+    return res;
+  }
+
   onSearchClick(config: BreadcrumbConfig): void {
     if (config.searchClick) {
       config.searchClick(config.searchCriteria);

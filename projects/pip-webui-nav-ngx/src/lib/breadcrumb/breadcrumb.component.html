@@ -23,7 +23,7 @@
       <span class="search-container" *ngIf="ctx.config?.searchCriteria" (click)="onSearchClick(ctx.config)">
         {{ ctx.config?.searchCriteria }} -
       </span>
-        <span>{{ ctx.config?.items[ctx.config?.items.length - 1].title }}</span>
+        <span>{{ getLastTitle(ctx.config?.items) }}</span>
       </div>
       <mat-icon>arrow_drop_down</mat-icon>
     </button>
@@ -33,7 +33,7 @@
       <span class="search-container" *ngIf="ctx.config?.searchCriteria" (click)="onSearchClick(ctx.config)">
         {{ ctx.config?.searchCriteria }} -
       </span>
-        <span>{{ ctx.config?.items[ctx.config?.items.length - 1].title }}</span>
+        <span>{{ getLastTitle(ctx.config?.items) }}</span>
       </div>
     </button>
 

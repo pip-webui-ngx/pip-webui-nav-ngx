@@ -1,6 +1,6 @@
 {
   "name": "pip-webui-nav-ngx",
-  "version": "14.0.1",
+  "version": "14.0.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,14 +14,14 @@
     "@types/lodash-es": "^4.17.6"
   },
   "peerDependencies": {
-    "@angular/cdk": "~14.2.7",
-    "@angular/common": "~14.2.10",
-    "@angular/core": "~14.2.10",
-    "@angular/flex-layout": "^14.0.0-beta.41",
-    "@angular/forms": "~14.2.10",
-    "@angular/material": "~14.2.7",
-    "@angular/router": "~14.2.10",
+    "@angular/cdk": "^14.0.0",
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/flex-layout": "^14.0.0-beta.39",
+    "@angular/forms": "^14.0.0",
+    "@angular/material": "^14.0.0",
+    "@angular/router": "^14.0.0",
     "pip-webui-layouts-ngx": "^14.0.0",
-    "rxjs": "~7.5.6"
+    "rxjs": "~7.5.0"
   }
 }
