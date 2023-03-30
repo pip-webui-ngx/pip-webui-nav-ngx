@@ -22,6 +22,7 @@
               <mat-icon *ngIf="section?.icon && section?.fontSet && !section?.svgIcon" [fontSet]="section?.fontSet"
                         [fontIcon]="section?.icon"></mat-icon>
               <mat-icon *ngIf="!section?.icon && !section?.fontSet && section?.svgIcon" [svgIcon]="section?.svgIcon">
+              </mat-icon>
               <h3 mat-line class="pip-link-title">{{ section.title }}</h3>
             </mat-expansion-panel-header>
             <pip-nav-menu-section [section]="section" [sectionIndex]="sectionIndex"
