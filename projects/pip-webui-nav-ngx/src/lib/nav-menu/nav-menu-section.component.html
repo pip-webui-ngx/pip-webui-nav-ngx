@@ -31,8 +31,11 @@
         [ngClass]="{ selected: itemIndex === selectedItemIndex && sectionIndex === selectedSectionIndex }"
       >
         <div fxLayout="row" fxLayoutAlign="start center" class="w-stretch" style="overflow: hidden">
-          <mat-icon *ngIf="item && !item.fontSet">{{ item?.icon || 'menu' }}</mat-icon>
-          <mat-icon *ngIf="item && item.fontSet" [fontSet]="item?.fontSet" [fontIcon]="item?.icon"></mat-icon>
+          <mat-icon
+            *ngIf="item?.icon && !item?.fontSet && !item?.svgIcon"> {{ item?.icon || 'menu'  }}</mat-icon>
+          <mat-icon *ngIf="item?.icon && item?.fontSet && !item?.svgIcon" [fontSet]="item?.fontSet"
+                    [fontIcon]="item?.icon"></mat-icon>
+          <mat-icon *ngIf="!item?.icon && !item?.fontSet && item?.svgIcon" [svgIcon]="item?.svgIcon">
           <h3 mat-line class="pip-link-title">{{ item.title }}</h3>
         </div>
       </a>

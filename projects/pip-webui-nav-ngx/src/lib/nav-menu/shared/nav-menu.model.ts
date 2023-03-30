@@ -8,6 +8,7 @@ export class NavMenuLink {
   // Icon name and fontSet
   icon?: string;
   fontSet?: string;
+  svgIcon?: string;
   // Flags for disabling standard behaviour
   disableNavbarClose?: boolean;
   disableTitleChange?: boolean;
@@ -68,6 +69,7 @@ export class NavMenuSection {
   // Icon name and fontSet
   icon?: string;
   fontSet?: string;
+  svgIcon?: string;
   isCollapsable?: boolean;
   // Links shown in the section
   links: NavMenuLink[];

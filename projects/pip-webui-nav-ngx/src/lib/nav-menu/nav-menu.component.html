@@ -17,9 +17,11 @@
         <mat-list-item>
           <mat-expansion-panel>
             <mat-expansion-panel-header collapsedHeight="40px" expandedHeight="40px">
-              <mat-icon *ngIf="!section.fontSet">{{ section?.icon || 'menu' }}</mat-icon>
-              <mat-icon *ngIf="section.icon && section.fontSet" [fontSet]="section?.fontSet"
+              <mat-icon
+                *ngIf="section?.icon && !section?.fontSet && !section?.svgIcon"> {{ section?.icon || 'menu'  }}</mat-icon>
+              <mat-icon *ngIf="section?.icon && section?.fontSet && !section?.svgIcon" [fontSet]="section?.fontSet"
                         [fontIcon]="section?.icon"></mat-icon>
+              <mat-icon *ngIf="!section?.icon && !section?.fontSet && section?.svgIcon" [svgIcon]="section?.svgIcon">
               <h3 mat-line class="pip-link-title">{{ section.title }}</h3>
             </mat-expansion-panel-header>
             <pip-nav-menu-section [section]="section" [sectionIndex]="sectionIndex"
