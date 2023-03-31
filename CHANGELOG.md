@@ -1,6 +1,6 @@
 # Pip.WebUI.Nav Changelog
 
-## <a name="14.0.3"></a> 14.0.2 (2023-03-30)
+## <a name="14.0.4"></a> 14.0.2 (2023-03-31)
 
 Nav menu could accept svg icons now
 

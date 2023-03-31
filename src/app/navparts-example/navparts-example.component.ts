@@ -142,6 +142,7 @@ export class NavpartsExampleComponent {
               tooltipText: 'Nav icons',
             },
             { name: 'Titles', title: 'Titles', state: 'titles', icon: 'list', url: 'navparts' },
+            { name: 'Corn', title: 'Corn', state: 'corn', svgIcon: 'pip:corn', url: 'navparts' },
           ],
         },
         {
