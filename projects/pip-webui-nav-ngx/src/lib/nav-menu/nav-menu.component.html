@@ -8,7 +8,7 @@
         </div>
         <div fxFlex="grow" class="w-stretch">
           <pip-nav-menu-section [section]="section" [sectionIndex]="sectionIndex"
-                                (select)="onItemSelect($event.index, $event.item)"
+                                (select)="onItemSelect($event.index, sectionIndex, $event.item)"
                                 [selectedSectionIndex]="selectedSectionIndex"
                                 [selectedItemIndex]="selectedItemIndex"></pip-nav-menu-section>
         </div>
@@ -26,7 +26,7 @@
               <h3 mat-line class="pip-link-title">{{ section.title }}</h3>
             </mat-expansion-panel-header>
             <pip-nav-menu-section [section]="section" [sectionIndex]="sectionIndex"
-                                  (select)="onItemSelect($event.index, $event.item)"
+                                  (select)="onItemSelect($event.index, sectionIndex, $event.item)"
                                   [selectedSectionIndex]="selectedSectionIndex"
                                   [selectedItemIndex]="selectedItemIndex"></pip-nav-menu-section>
           </mat-expansion-panel>

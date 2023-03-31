@@ -94,8 +94,9 @@ export class PipNavMenuComponent implements OnInit, OnDestroy {
     });
   }
 
-  onItemSelect(index: number, item: NavMenuLink): void {
+  onItemSelect(index: number, sectionIndex: number, item: NavMenuLink): void {
     this.selectedItemIndex = index;
+    this.selectedSectionIndex = sectionIndex;
     if (!this.disableDefaultSelectActions) {
       if (!item.disableNavbarClose) {
         this.sidenav.start?.close();
