@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ContentChild,
+  ElementRef,
+  HostBinding,
+  Input,
+  TemplateRef,
+} from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { combineLatest, map, Observable, startWith, tap } from 'rxjs';
 import { NavConfigItem } from '../shared/nav-config.model';
@@ -17,6 +26,7 @@ export class PipBreadcrumbComponent {
     isMobile: boolean;
   }>;
 
+  @Input() dividerRef: TemplateRef<any>;
   @HostBinding('class.pip-mobile-breadcrumb') isMobile = false;
 
   public constructor(

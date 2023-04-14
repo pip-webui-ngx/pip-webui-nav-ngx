@@ -21,7 +21,8 @@
   <pip-root-header>
     <pip-appbar>
       <pip-nav-icon></pip-nav-icon>
-      <pip-breadcrumb></pip-breadcrumb>
+      <pip-breadcrumb [dividerRef]="customDivider">
+      </pip-breadcrumb>
       <div fxFlex></div>
       <pip-primary-actions></pip-primary-actions>
       <pip-secondary-actions></pip-secondary-actions>
@@ -29,3 +30,6 @@
   </pip-root-header>
   <router-outlet></router-outlet>
 </pip-root-layout>
+<ng-template #customDivider>
+  <mat-icon>settings</mat-icon>
+</ng-template>

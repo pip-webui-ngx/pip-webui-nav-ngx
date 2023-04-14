@@ -1,6 +1,19 @@
 # Pip.WebUI.Nav Changelog
 
-## <a name="14.0.5"></a> 14.0.2 (2023-03-31)
+## <a name="14.0.6"></a> 14.0.6 (2023-04-14)
+
+Breadcrumb dividers could be customized
+
+### Features
+* **nav icon**: main app icon
+* **nav menu**: main navigation menu with list of links
+* **nav header**: navigation toolbar that contains key nav information
+* **breadcrumb**: contains title of each section where was the user
+* **primary actions**: list of primary links that places in app bar
+* **secondary actions**: menu of secondary links
+
+
+## <a name="14.0.5"></a> 14.0.5 (2023-03-31)
 
 Fix selection of the section
 
@@ -18,7 +31,7 @@ No breaking changes in this version
 ### Bug Fixes
 * Update styles in pip nav
 
-## <a name="14.0.4"></a> 14.0.2 (2023-03-31)
+## <a name="14.0.4"></a> 14.0.4 (2023-03-31)
 
 Nav menu could accept svg icons now
 
