@@ -10,7 +10,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma'),
+      require('@angular-devkit/build-angular/plugins/karma')
     ],
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
@@ -30,7 +30,7 @@ module.exports = function (config) {
     jasmineHtmlReporter: {
       suppressAll: true, // removes the duplicated traces
     },
-    coverageReporter: {
+    coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../coverage/pip-webui-nav-ngx-app'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }],
