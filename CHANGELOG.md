@@ -1,5 +1,17 @@
 # Pip.WebUI.Nav Changelog
 
+## <a name="14.0.8"></a> 14.0.8 (2023-06-19)
+
+Active class for clickable links is optional and only set if there's a link
+
+### Features
+* **nav icon**: main app icon
+* **nav menu**: main navigation menu with list of links
+* **nav header**: navigation toolbar that contains key nav information
+* **breadcrumb**: contains title of each section where was the user
+* **primary actions**: list of primary links that places in app bar
+* **secondary actions**: menu of secondary links
+
 ## <a name="14.0.7"></a> 14.0.7 (2023-05-31)
 
 Links set active class

@@ -7,8 +7,8 @@
             ? item.click($event, itemIndex, item, callOnSelectFn)
             : onItemSelect(itemIndex, item)
         "
-        routerLink="/{{ item?.url }}"
-        routerLinkActive="selected"
+        [routerLink]="item?.url"
+        [routerLinkActive]="item?.url ? 'selected' : ''"
         class="w-stretch"
         [ngClass]="{ selected: itemIndex === selectedItemIndex && sectionIndex === selectedSectionIndex }"
       >
