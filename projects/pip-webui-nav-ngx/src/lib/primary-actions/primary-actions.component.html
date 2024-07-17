@@ -1,36 +1,82 @@
 <div class="pip-actions-container" fxLayout="row" fxLayoutAlign="space-around center" *ngIf="config$ | async as config">
-  <div class="pip-action" [ngClass]="['pip-action-' + action.name]" *ngFor="let action of config.actions"
-       [ngSwitch]="!!(action.subActions && action.subActions.length > 0)">
-    <button mat-icon-button *ngSwitchCase="false">
-      <mat-icon *ngIf="action?.icon?.fontIcon && !action?.icon?.fontSet && !action?.icon?.svgIcon"
-                [matBadge]="action?.count" [matBadgeHidden]="!action?.count" matBadgeColor="warn"
-                (click)="onActionClick(action)">
-        {{ action.icon.fontIcon }}</mat-icon>
-      <mat-icon *ngIf="action?.icon?.fontIcon && action?.icon?.fontSet && !action?.icon?.svgIcon"
-                [matBadge]="action?.count" [matBadgeHidden]="!action?.count" matBadgeColor="warn"
-                (click)="onActionClick(action)" [fontSet]="action?.icon?.fontSet" [fontIcon]="action?.icon?.fontIcon">
+  <div
+    class="pip-action"
+    [ngClass]="['pip-action-' + action.name]"
+    *ngFor="let action of config.actions"
+    [ngSwitch]="!!(action.subActions && action.subActions.length > 0)"
+  >
+    <button mat-icon-button *ngSwitchCase="false" [matTooltip]="action.tooltip">
+      <mat-icon
+        *ngIf="action?.icon?.fontIcon && !action?.icon?.fontSet && !action?.icon?.svgIcon"
+        [matBadge]="action?.count"
+        [matBadgeHidden]="!action?.count"
+        matBadgeColor="warn"
+        (click)="onActionClick(action)"
+      >
+        {{ action.icon.fontIcon }}</mat-icon
+      >
+      <mat-icon
+        *ngIf="action?.icon?.fontIcon && action?.icon?.fontSet && !action?.icon?.svgIcon"
+        [matBadge]="action?.count"
+        [matBadgeHidden]="!action?.count"
+        matBadgeColor="warn"
+        (click)="onActionClick(action)"
+        [fontSet]="action?.icon?.fontSet"
+        [fontIcon]="action?.icon?.fontIcon"
+      >
       </mat-icon>
-      <mat-icon *ngIf="!action?.icon?.fontIcon && !action?.icon?.fontSet && action?.icon?.svgIcon"
-                [matBadge]="action?.count" [matBadgeHidden]="!action?.count" matBadgeColor="warn"
-                (click)="onActionClick(action)" [svgIcon]="action?.icon?.svgIcon"></mat-icon>
+      <mat-icon
+        *ngIf="!action?.icon?.fontIcon && !action?.icon?.fontSet && action?.icon?.svgIcon"
+        [matBadge]="action?.count"
+        [matBadgeHidden]="!action?.count"
+        matBadgeColor="warn"
+        (click)="onActionClick(action)"
+        [svgIcon]="action?.icon?.svgIcon"
+      ></mat-icon>
     </button>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu" (click)="onActionClick(action)" *ngSwitchCase="true">
-      <mat-icon *ngIf="action?.icon?.fontIcon && !action?.icon?.fontSet && !action?.icon?.svgIcon"
-                [matBadge]="action?.count" [matBadgeHidden]="!action?.count" matBadgeColor="warn"
-                (click)="onActionClick(action)">
-        {{ action.icon.fontIcon }}</mat-icon>
-      <mat-icon *ngIf="action?.icon?.fontIcon && action?.icon?.fontSet && !action?.icon?.svgIcon"
-                [matBadge]="action?.count" [matBadgeHidden]="!action?.count" matBadgeColor="warn"
-                (click)="onActionClick(action)" [fontSet]="action?.icon?.fontSet" [fontIcon]="action?.icon?.fontIcon">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      (click)="onActionClick(action)"
+      *ngSwitchCase="true"
+      [matTooltip]="action.tooltip"
+    >
+      <mat-icon
+        *ngIf="action?.icon?.fontIcon && !action?.icon?.fontSet && !action?.icon?.svgIcon"
+        [matBadge]="action?.count"
+        [matBadgeHidden]="!action?.count"
+        matBadgeColor="warn"
+        (click)="onActionClick(action)"
+        >{{ action.icon.fontIcon }}</mat-icon
+      >
+      <mat-icon
+        *ngIf="action?.icon?.fontIcon && action?.icon?.fontSet && !action?.icon?.svgIcon"
+        [matBadge]="action?.count"
+        [matBadgeHidden]="!action?.count"
+        matBadgeColor="warn"
+        (click)="onActionClick(action)"
+        [fontSet]="action?.icon?.fontSet"
+        [fontIcon]="action?.icon?.fontIcon"
+      >
       </mat-icon>
-      <mat-icon *ngIf="!action?.icon?.fontIcon && !action?.icon?.fontSet && action?.icon?.svgIcon"
-                [matBadge]="action?.count" [matBadgeHidden]="!action?.count" matBadgeColor="warn"
-                (click)="onActionClick(action)" [svgIcon]="action?.icon?.svgIcon"></mat-icon>
+      <mat-icon
+        *ngIf="!action?.icon?.fontIcon && !action?.icon?.fontSet && action?.icon?.svgIcon"
+        [matBadge]="action?.count"
+        [matBadgeHidden]="!action?.count"
+        matBadgeColor="warn"
+        (click)="onActionClick(action)"
+        [svgIcon]="action?.icon?.svgIcon"
+      ></mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button [ngClass]="[subaction.name ? 'pip-subaction-' + subaction.name : '']" mat-menu-item
-              *ngFor="let subaction of action.subActions" (click)="onSubActionClick(subaction)">
+      <button
+        [ngClass]="[subaction.name ? 'pip-subaction-' + subaction.name : '']"
+        mat-menu-item
+        [matTooltip]="subaction.tooltip"
+        *ngFor="let subaction of action.subActions"
+        (click)="onSubActionClick(subaction)"
+      >
         {{ subaction.title }}
       </button>
     </mat-menu>

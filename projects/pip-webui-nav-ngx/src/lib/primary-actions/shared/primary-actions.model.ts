@@ -3,6 +3,7 @@ import { NavIconConfig } from '../../nav-icon';
 export class PrimaryAction {
   icon: NavIconConfig;
   name: string;
+  tooltip?: string;
   count?: number;
   subActions?: PrimarySubAction[];
 
@@ -16,6 +17,7 @@ export class PrimaryAction {
 
 export class PrimarySubAction {
   title: string;
+  tooltip?: string;
   name?: string;
   action?: () => void;
 

@@ -57,6 +57,7 @@ export class NavpartsExampleComponent {
           actions: [
             {
               name: 'custom_font_icon',
+              tooltip: 'Hit and run',
               icon: {
                 fontIcon: 'ice-run',
                 fontSet: 'ice',
