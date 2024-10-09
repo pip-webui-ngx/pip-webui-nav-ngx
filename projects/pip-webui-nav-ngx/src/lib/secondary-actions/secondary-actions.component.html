@@ -1,13 +1,22 @@
 <ng-container *ngIf="config$ | async as config">
   <div class="pip-secondary-actions-container" *ngIf="config?.actions && config.actions.length > 0">
-    <button mat-icon-button [matMenuTriggerFor]="menu" #actionsMenuTrigger="matMenuTrigger"
-            (click)="onOpenActionsMenu(config)">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      #actionsMenuTrigger="matMenuTrigger"
+      (click)="onOpenActionsMenu(config)"
+    >
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button [ngClass]="[ action.name ? 'pip-secondary-action-' + action.name : '']" mat-menu-item
-              *ngFor="let action of config?.actions"
-              (click)="onActionClick(action)">
+      <button
+        [ngClass]="[action.name ? 'pip-secondary-action-' + action.name : '']"
+        mat-menu-item
+        *ngFor="let action of config?.actions"
+        (click)="onActionClick(action)"
+        [matTooltip]="action.tooltip"
+        [disabled]="action.disabled"
+      >
         {{ action.title }}
       </button>
     </mat-menu>

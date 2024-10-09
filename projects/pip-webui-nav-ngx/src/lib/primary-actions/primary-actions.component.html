@@ -5,7 +5,7 @@
     *ngFor="let action of config.actions"
     [ngSwitch]="!!(action.subActions && action.subActions.length > 0)"
   >
-    <button mat-icon-button *ngSwitchCase="false" [matTooltip]="action.tooltip">
+    <button mat-icon-button *ngSwitchCase="false" [matTooltip]="action.tooltip" [disabled]="action.disabled">
       <mat-icon
         *ngIf="action?.icon?.fontIcon && !action?.icon?.fontSet && !action?.icon?.svgIcon"
         [matBadge]="action?.count"
@@ -41,6 +41,7 @@
       (click)="onActionClick(action)"
       *ngSwitchCase="true"
       [matTooltip]="action.tooltip"
+      [disabled]="action.disabled"
     >
       <mat-icon
         *ngIf="action?.icon?.fontIcon && !action?.icon?.fontSet && !action?.icon?.svgIcon"
@@ -76,6 +77,7 @@
         [matTooltip]="subaction.tooltip"
         *ngFor="let subaction of action.subActions"
         (click)="onSubActionClick(subaction)"
+        [disabled]="subaction.disabled"
       >
         {{ subaction.title }}
       </button>
