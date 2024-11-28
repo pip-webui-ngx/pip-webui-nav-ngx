@@ -1,6 +1,6 @@
 {
   "name": "pip-webui-nav-ngx",
-  "version": "14.0.10",
+  "version": "14.0.11",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

@@ -1,5 +1,17 @@
 # Pip.WebUI.Nav Changelog
 
+## <a name="14.0.11"></a> 14.0.11 (2024-11-28)
+
+Colors for icons
+
+### Features
+* **nav icon**: main app icon
+* **nav menu**: main navigation menu with list of links
+* **nav header**: navigation toolbar that contains key nav information
+* **breadcrumb**: contains title of each section where was the user
+* **primary actions**: list of primary links that places in app bar
+* **secondary actions**: menu of secondary links
+
 ## <a name="14.0.10"></a> 14.0.10 (2024-10-09)
 
 Primary and secondary actions may be disabled now. They are enabled by default

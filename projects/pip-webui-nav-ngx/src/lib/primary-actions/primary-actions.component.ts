@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 import { Observable } from 'rxjs';
 import { NavConfigItem } from '../shared/nav-config.model';
 import { PipNavService } from '../shared/nav.service';
@@ -26,5 +27,9 @@ export class PipPrimaryActionsComponent {
     if (subAction?.action && typeof subAction.action === 'function') {
       subAction.action();
     }
+  }
+
+  isThemePaletteColor(color: ThemePalette | string) {
+    return !color || ['primary', 'accent', 'warn'].includes(color);
   }
 }

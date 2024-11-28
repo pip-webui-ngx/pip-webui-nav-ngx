@@ -12,6 +12,8 @@
         [matBadgeHidden]="!action?.count"
         matBadgeColor="warn"
         (click)="onActionClick(action)"
+        [color]="isThemePaletteColor(action?.icon?.color) ? action?.icon?.color : undefined"
+        [ngStyle]="isThemePaletteColor(action?.icon?.color) ? {} : { color: action?.icon?.color }"
       >
         {{ action.icon.fontIcon }}</mat-icon
       >
@@ -23,6 +25,8 @@
         (click)="onActionClick(action)"
         [fontSet]="action?.icon?.fontSet"
         [fontIcon]="action?.icon?.fontIcon"
+        [color]="isThemePaletteColor(action?.icon?.color) ? action?.icon?.color : undefined"
+        [ngStyle]="isThemePaletteColor(action?.icon?.color) ? {} : { color: action?.icon?.color }"
       >
       </mat-icon>
       <mat-icon
@@ -32,6 +36,8 @@
         matBadgeColor="warn"
         (click)="onActionClick(action)"
         [svgIcon]="action?.icon?.svgIcon"
+        [color]="isThemePaletteColor(action?.icon?.color) ? action?.icon?.color : undefined"
+        [ngStyle]="isThemePaletteColor(action?.icon?.color) ? {} : { color: action?.icon?.color }"
       ></mat-icon>
     </button>
 
@@ -49,6 +55,8 @@
         [matBadgeHidden]="!action?.count"
         matBadgeColor="warn"
         (click)="onActionClick(action)"
+        [color]="isThemePaletteColor(action?.icon?.color) ? action?.icon?.color : undefined"
+        [ngStyle]="isThemePaletteColor(action?.icon?.color) ? {} : { color: action?.icon?.color }"
         >{{ action.icon.fontIcon }}</mat-icon
       >
       <mat-icon
@@ -59,6 +67,8 @@
         (click)="onActionClick(action)"
         [fontSet]="action?.icon?.fontSet"
         [fontIcon]="action?.icon?.fontIcon"
+        [color]="isThemePaletteColor(action?.icon?.color) ? action?.icon?.color : undefined"
+        [ngStyle]="isThemePaletteColor(action?.icon?.color) ? {} : { color: action?.icon?.color }"
       >
       </mat-icon>
       <mat-icon
@@ -68,6 +78,8 @@
         matBadgeColor="warn"
         (click)="onActionClick(action)"
         [svgIcon]="action?.icon?.svgIcon"
+        [color]="isThemePaletteColor(action?.icon?.color) ? action?.icon?.color : undefined"
+        [ngStyle]="isThemePaletteColor(action?.icon?.color) ? {} : { color: action?.icon?.color }"
       ></mat-icon>
     </button>
     <mat-menu #menu="matMenu">

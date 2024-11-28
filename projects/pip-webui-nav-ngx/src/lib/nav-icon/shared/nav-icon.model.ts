@@ -1,7 +1,10 @@
+import { ThemePalette } from '@angular/material/core';
+
 export class NavIconConfig {
   fontSet?: string;
   fontIcon?: string;
   svgIcon?: string;
+  color?: ThemePalette | string;
   action?: () => void;
 
   constructor(props?: Partial<NavIconConfig>) {
