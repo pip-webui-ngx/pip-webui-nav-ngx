@@ -25,6 +25,7 @@
         (click)="onActionClick(action)"
         [fontSet]="action?.icon?.fontSet"
         [fontIcon]="action?.icon?.fontIcon"
+        [class.mat-ligature-font]="action?.icon?.ligature"
         [color]="isThemePaletteColor(action?.icon?.color) ? action?.icon?.color : undefined"
         [ngStyle]="isThemePaletteColor(action?.icon?.color) ? {} : { color: action?.icon?.color }"
       >
@@ -67,6 +68,7 @@
         (click)="onActionClick(action)"
         [fontSet]="action?.icon?.fontSet"
         [fontIcon]="action?.icon?.fontIcon"
+        [class.mat-ligature-font]="action?.icon?.ligature"
         [color]="isThemePaletteColor(action?.icon?.color) ? action?.icon?.color : undefined"
         [ngStyle]="isThemePaletteColor(action?.icon?.color) ? {} : { color: action?.icon?.color }"
       >

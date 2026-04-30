@@ -20,7 +20,7 @@
               <mat-icon
                 *ngIf="section?.icon && !section?.fontSet && !section?.svgIcon"> {{ section?.icon || 'menu'  }}</mat-icon>
               <mat-icon *ngIf="section?.icon && section?.fontSet && !section?.svgIcon" [fontSet]="section?.fontSet"
-                        [fontIcon]="section?.icon"></mat-icon>
+                        [fontIcon]="section?.icon" [class.mat-ligature-font]="section?.ligature"></mat-icon>
               <mat-icon *ngIf="!section?.icon && !section?.fontSet && section?.svgIcon" [svgIcon]="section?.svgIcon">
               </mat-icon>
               <h3 mat-line class="pip-link-title">{{ section.title }}</h3>

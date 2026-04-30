@@ -2,4 +2,8 @@
   mat-icon {
     font-size: 24px;
   }
+
+  .ligature {
+    content: attr(fontIcon);
+  }
 }

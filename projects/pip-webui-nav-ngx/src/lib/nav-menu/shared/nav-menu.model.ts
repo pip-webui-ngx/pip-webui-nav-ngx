@@ -8,6 +8,7 @@ export class NavMenuLink {
   // Icon name and fontSet
   icon?: string;
   fontSet?: string;
+  ligature?: boolean;
   svgIcon?: string;
   // Flags for disabling standard behaviour
   disableNavbarClose?: boolean;
@@ -44,6 +45,7 @@ export class NavMenuLink {
     this.tooltipText = props?.tooltipText;
     this.icon = props?.icon;
     this.fontSet = props?.fontSet;
+    this.ligature = props?.ligature;
     this.disableNavbarClose = props?.disableNavbarClose;
     this.disableTitleChange = props?.disableTitleChange;
     this.count = props?.count;
@@ -69,6 +71,7 @@ export class NavMenuSection {
   // Icon name and fontSet
   icon?: string;
   fontSet?: string;
+  ligature?: boolean;
   svgIcon?: string;
   isCollapsable?: boolean;
   // Links shown in the section
@@ -82,6 +85,7 @@ export class NavMenuSection {
     this.tooltipText = props?.tooltipText;
     this.icon = props?.icon;
     this.fontSet = props?.fontSet;
+    this.ligature = props?.ligature;
     this.isCollapsable = props?.isCollapsable;
     this.links = (props?.links ?? []).map((l) => new NavMenuLink(l));
     this.access = props?.access;
